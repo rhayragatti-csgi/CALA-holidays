@@ -1,3 +1,41 @@
+/* Design System Variables */
+:root {
+    /* Brand Blues */
+    --blue-80: #0F6CBD;
+    --blue-70: #115EA3;
+    --blue-60: #0F548C;
+    --blue-90: #2886DE;
+    --blue-150: #CFE4FA;
+    --blue-160: #EBF3FC;
+    
+    /* Neutrals */
+    --neutral-100: #FFFFFF;
+    --neutral-96: #F5F5F5;
+    --neutral-94: #F0F0F0;
+    --neutral-92: #EBEBEB;
+    --neutral-82: #D1D1D1;
+    --neutral-38: #616161;
+    --neutral-26: #424242;
+    --neutral-14: #242424;
+    
+    /* Semantic tokens */
+    --brand-blue-rest: var(--blue-80);
+    --brand-blue-hover: var(--blue-70);
+    --brand-blue-pressed: #0C3B5E;
+    
+    /* Shadows */
+    --shadow-04: 0 2px 4px rgba(0,0,0,0.24);
+    --shadow-light-08: 0 4px 8px rgba(0,0,0,0.14);
+    
+    /* Font sizes */
+    --font-base: 0.875rem;
+    --font-medium: 1rem;
+    --font-large: 1.25rem;
+    
+    /* Typography */
+    --font-family-base: "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +43,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #3A87A4;
+    font-family: var(--font-family-base);
+    background: linear-gradient(135deg, var(--blue-90) 0%, var(--brand-blue-rest) 100%);
     min-height: 100vh;
-    color: #585858;
+    color: var(--neutral-38);
 }
 
 .container {
@@ -67,7 +105,7 @@ header p {
 .filter-label {
     font-weight: 600;
     margin-bottom: 8px;
-    color: #555;
+    color: var(--neutral-26);
 }
 
 .checkbox-container {
@@ -81,7 +119,7 @@ header p {
     align-items: center;
     cursor: pointer;
     font-size: 16px;
-    color: #585858;
+    color: var(--neutral-38);
     position: relative;
     padding-left: 35px;
     user-select: none;
@@ -101,19 +139,19 @@ header p {
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #f0f0f0;
+    background-color: var(--neutral-94);
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
 .checkbox-label:hover input ~ .checkmark {
-    background-color: #e8f2ff;
-    border-color: #47A1C3;
+    background-color: var(--blue-160);
+    border-color: var(--brand-blue-rest);
 }
 
 .checkbox-label input:checked ~ .checkmark {
-    background-color: #47A1C3;
-    border-color: #47A1C3;
+    background-color: var(--brand-blue-rest);
+    border-color: var(--brand-blue-rest);
 }
 
 .checkmark:after {
@@ -138,7 +176,7 @@ header p {
 
 .view-toggle {
     display: flex;
-    background: #f0f0f0;
+    background: var(--neutral-94);
     border-radius: 8px;
     padding: 4px;
 }
@@ -148,7 +186,7 @@ header p {
     padding: 8px 16px;
     border: none;
     background: transparent;
-    color: #666;
+    color: var(--neutral-38);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -157,13 +195,13 @@ header p {
 }
 
 .view-btn.active {
-    background: #47A1C3;
+    background: var(--brand-blue-rest);
     color: white;
-    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 2px 4px rgba(15, 108, 189, 0.3);
 }
 
 .view-btn:hover:not(.active) {
-    color: #47A1C3;
+    color: var(--brand-blue-rest);
 }
 
 .filter-group select {
@@ -176,8 +214,8 @@ header p {
 
 .filter-group select:focus {
     outline: none;
-    border-color: #47A1C3;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: var(--brand-blue-rest);
+    box-shadow: 0 0 0 3px rgba(15, 108, 189, 0.1);
 }
 
 .clear-btn {
@@ -201,7 +239,7 @@ header p {
 }
 
 .quick-btn {
-    background: #47A1C3;
+    background: var(--brand-blue-rest);
     color: white;
     border: none;
     padding: 12px 16px;
@@ -215,9 +253,9 @@ header p {
 }
 
 .quick-btn:hover {
-    background: #3b8aa8;
+    background: var(--brand-blue-hover);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(71, 161, 195, 0.3);
+    box-shadow: 0 5px 15px rgba(15, 108, 189, 0.3);
 }
 
 .filter-actions {
@@ -251,12 +289,12 @@ header p {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #47A1C3;
+    color: var(--brand-blue-rest);
     margin-bottom: 5px;
 }
 
 .stat-label {
-    color: #666;
+    color: var(--neutral-38);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -288,7 +326,7 @@ header p {
 }
 
 .holiday-item:hover {
-    background: #F1F9FC;
+    background: var(--blue-160);
     transform: translateX(5px);
 }
 
@@ -299,7 +337,7 @@ header p {
 .holiday-name {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #585858;
+    color: var(--neutral-26);
     margin-bottom: 5px;
 }
 
@@ -312,7 +350,7 @@ header p {
 
 .holiday-country {
     display: inline-block;
-    background: #47A1C3;
+    background: var(--brand-blue-rest);
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
@@ -346,13 +384,13 @@ header p {
 }
 
 .holiday-date {
-    color: #666;
+    color: var(--neutral-38);
     font-size: 0.9rem;
 }
 
 .holiday-week {
-    background: #e8f2ff;
-    color: #47A1C3;
+    background: var(--blue-160);
+    color: var(--brand-blue-rest);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -377,7 +415,7 @@ header p {
 }
 
 .calendar-nav-btn {
-    background: #47A1C3;
+    background: var(--brand-blue-rest);
     color: white;
     border: none;
     width: 40px;
@@ -392,14 +430,14 @@ header p {
 }
 
 .calendar-nav-btn:hover {
-    background: #5a6fd8;
+    background: var(--brand-blue-hover);
     transform: scale(1.1);
 }
 
 #calendar-month-year {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #585858;
+    color: var(--neutral-26);
     margin: 0;
 }
 
@@ -418,8 +456,8 @@ header p {
     padding: 15px 5px;
     text-align: center;
     font-weight: 600;
-    color: #666;
-    background: #F1F9FC;
+    color: var(--neutral-38);
+    background: var(--blue-160);
     font-size: 0.9rem;
 }
 
@@ -441,17 +479,17 @@ header p {
 }
 
 .calendar-day:hover {
-    background: #F1F9FC;
+    background: var(--blue-160);
 }
 
 .calendar-day.other-month {
-    background: #F1F9FC;
-    color: #ccc;
+    background: var(--neutral-96);
+    color: var(--neutral-82);
 }
 
 .calendar-day.today {
-    background: #e8f2ff;
-    border-color: #47A1C3;
+    background: var(--blue-150);
+    border-color: var(--brand-blue-rest);
 }
 
 .calendar-day-number {
@@ -467,7 +505,7 @@ header p {
     right: 4px;
     height: 4px;
     border-radius: 2px;
-    background: #47A1C3;
+    background: var(--brand-blue-rest);
 }
 
 .holiday-indicator.colombia {
@@ -475,12 +513,12 @@ header p {
 }
 
 .holiday-indicator.both {
-    background: linear-gradient(90deg, #47A1C3 50%, #ff6b6b 50%);
+    background: linear-gradient(90deg, var(--brand-blue-rest) 50%, #ff6b6b 50%);
 }
 
 .holiday-tooltip {
     position: absolute;
-    background: #585858;
+    background: var(--neutral-26);
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
@@ -500,13 +538,13 @@ header p {
 .no-results {
     text-align: center;
     padding: 60px 20px;
-    color: #666;
+    color: var(--neutral-38);
 }
 
 .no-results h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #999;
+    color: var(--neutral-82);
 }
 
 .no-results p {

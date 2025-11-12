@@ -68,25 +68,26 @@
                 </select>
             </div>
 
-            <div class="filter-group">
-                <label for="week-select" class="filter-label">Week:</label>
-                <select id="week-select">
-                    <option value="all">All Weeks</option>
-                </select>
-            </div>
-
-            <div class="filter-group view-toggle-group">
-                <label class="filter-label">View:</label>
-                <div class="view-toggle">
-                    <button id="list-view-btn" class="view-btn active">List</button>
-                    <button id="calendar-view-btn" class="view-btn">Calendar</button>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="week-select" class="filter-label">Week:</label>
+                    <select id="week-select">
+                        <option value="all">All Weeks</option>
+                    </select>
                 </div>
-            </div>
 
-            <div class="filter-actions">
-                <button id="today-btn" class="quick-btn" title="Jump to today" aria-label="Jump to today">Today</button>
-                <button id="this-week-btn" class="quick-btn" title="Select current week" aria-label="Select current week">This Week</button>
-                <button id="clear-filters" class="clear-btn">Clear Filters</button>
+                <div class="filter-group view-toggle-group">
+                    <div class="view-toggle">
+                        <button id="list-view-btn" class="view-btn active">List</button>
+                        <button id="calendar-view-btn" class="view-btn">Calendar</button>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button id="today-btn" class="quick-btn" title="Jump to today" aria-label="Jump to today">Today</button>
+                    <button id="this-week-btn" class="quick-btn" title="Select current week" aria-label="Select current week">This Week</button>
+                    <button id="clear-filters" class="clear-btn">Clear Filters</button>
+                </div>
             </div>
         </div>
 

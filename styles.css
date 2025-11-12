@@ -84,6 +84,14 @@ header p {
     align-items: start;
 }
 
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
 .filter-group {
     display: flex;
     flex-direction: column;
@@ -100,6 +108,9 @@ header p {
 
 .view-toggle-group {
     min-width: 120px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
 }
 
 .filter-label {
@@ -229,7 +240,6 @@ header p {
     cursor: pointer;
     transition: all 0.3s ease;
     height: fit-content;
-    align-self: end;
 }
 
 .clear-btn:hover {
@@ -249,7 +259,6 @@ header p {
     cursor: pointer;
     transition: all 0.3s ease;
     height: fit-content;
-    align-self: end;
 }
 
 .quick-btn:hover {
@@ -263,11 +272,6 @@ header p {
     gap: 16px;
     align-items: center;
     margin-left: auto;
-}
-
-.filter-actions .quick-btn,
-.filter-actions .clear-btn {
-    align-self: center;
 }
 
 .stats {
@@ -565,6 +569,17 @@ header p {
         align-items: stretch;
     }
     
+    .filter-row {
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 16px;
+    }
+    
+    .view-toggle-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
     .filter-group {
         min-width: auto;
     }
@@ -576,6 +591,11 @@ header p {
     .checkbox-container {
         flex-direction: row;
         gap: 20px;
+    }
+    
+    .filter-actions {
+        margin-left: 0;
+        justify-content: flex-start;
     }
     
     .stats {

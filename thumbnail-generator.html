@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail Generator</title>
+    <style>
+        /* Design System Colors */
+        :root {
+            --blue-80: #0F6CBD;
+            --blue-90: #2886DE;
+            --neutral-100: #FFFFFF;
+            --neutral-26: #424242;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .thumbnail {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, var(--blue-90) 0%, var(--blue-80) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thumbnail::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .thumbnail::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .content {
+            z-index: 1;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .thumbnail h1 {
+            font-size: 72px;
+            margin: 0 0 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .thumbnail h2 {
+            font-size: 48px;
+            margin: 0 0 30px;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .thumbnail .subtitle {
+            font-size: 36px;
+            margin: 0;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .flags {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            font-size: 80px;
+        }
+
+        .info {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 60px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info p {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        /* Instructions */
+        .instructions {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        .instructions h3 {
+            color: var(--blue-80);
+            margin-top: 0;
+        }
+
+        .instructions ol {
+            line-height: 1.8;
+        }
+
+        .instructions code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- THUMBNAIL PREVIEW (1200x630px) -->
+    <div class="thumbnail">
+        <div class="content">
+            <h1>Public Holidays 2025</h1>
+            <h2>Team CALA</h2>
+            <p class="subtitle">Brazil & Colombia</p>
+            <div class="flags">
+                <span>🇧🇷</span>
+                <span>🇨🇴</span>
+            </div>
+            <div class="info">
+                <p>Londrina • Bogotá</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSTRUCTIONS -->
+    <div class="instructions">
+        <h3>📸 How to Create Your Thumbnail</h3>
+        <ol>
+            <li>Open this file (<code>thumbnail-generator.html</code>) in your browser</li>
+            <li>Take a screenshot of ONLY the blue gradient area above (1200x630px)</li>
+            <li><strong>Option A - Mac:</strong>
+                <ul>
+                    <li>Press <code>Cmd + Shift + 4</code></li>
+                    <li>Click and drag to select just the blue area</li>
+                    <li>Save as <code>thumbnail.png</code></li>
+                </ul>
+            </li>
+            <li><strong>Option B - Windows:</strong>
+                <ul>
+                    <li>Use Snipping Tool or <code>Windows + Shift + S</code></li>
+                    <li>Select the blue gradient area</li>
+                    <li>Save as <code>thumbnail.png</code></li>
+                </ul>
+            </li>
+            <li><strong>Option C - Use Browser DevTools:</strong>
+                <ul>
+                    <li>Right-click on the blue area → Inspect</li>
+                    <li>Find <code>&lt;div class="thumbnail"&gt;</code> in the Elements panel</li>
+                    <li>Right-click on it → Capture node screenshot</li>
+                    <li>Save as <code>thumbnail.png</code></li>
+                </ul>
+            </li>
+            <li>Place the <code>thumbnail.png</code> file in your repository root</li>
+            <li>Commit and push to GitHub</li>
+            <li>GitHub Pages will automatically use it for link previews!</li>
+        </ol>
+        
+        <h3>🎨 Customization Tips</h3>
+        <ul>
+            <li>The thumbnail is designed at 1200x630px (optimal for social media)</li>
+            <li>Edit the text in the HTML above to customize</li>
+            <li>Colors match your FSM Design System</li>
+            <li>Background uses the same gradient as your site</li>
+        </ul>
+
+        <h3>✅ Testing Your Thumbnail</h3>
+        <p>After uploading, test your thumbnail preview at:</p>
+        <ul>
+            <li><strong>Facebook:</strong> <a href="https://developers.facebook.com/tools/debug/" target="_blank">https://developers.facebook.com/tools/debug/</a></li>
+            <li><strong>Twitter:</strong> <a href="https://cards-dev.twitter.com/validator" target="_blank">https://cards-dev.twitter.com/validator</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/post-inspector/" target="_blank">https://www.linkedin.com/post-inspector/</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+
